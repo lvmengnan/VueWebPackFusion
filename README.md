@@ -1,4 +1,4 @@
-### 这是一个练习webpack的项目
+### 这是一个练习webpack5和vue3的项目
 
 #### 手动打包命令
 npx webpack
@@ -14,6 +14,7 @@ npx webpack
 3. babel-loader @babel/preset-env @babel/core
 4. vue-style-loader css-loader postcss-loader sass-loader node-sass(node-sass不好装，可以使用sass)
 5. webpack-dev-server
+6. css-minimizer-webpack-plugin mini-css-extract-plugin
 
 #### 第三方库
 + UI: ememetUI (按需加载， babel-plugin-component)
