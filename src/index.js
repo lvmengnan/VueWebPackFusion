@@ -1,8 +1,11 @@
 import { createApp } from 'vue';
 import { createPinia } from 'pinia';
+// import ElementPlus  from 'element-plus';
 import App from '@/App';
 import Store from '@/sotre';
 import Router from '@/router';
+import '@/assest/css/init_style.css';
+
 
 const app = createApp(App);
 const pinia = createPinia();
@@ -13,5 +16,8 @@ app.use(pinia);
 
 // 路由
 app.use(Router);
+
+// UI
+// app.use(ElementPlus) 利用插件实现自动导入
 
 app.mount('#app')

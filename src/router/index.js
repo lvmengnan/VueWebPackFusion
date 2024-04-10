@@ -1,8 +1,7 @@
-import { createRouter, createWebHistory, createWebHashHistory } from 'vue-router';
+import { createRouter, createWebHistory } from 'vue-router';
 import Home from '@/views/Home';
-import About from '@/views/About';
 
-const routes = [
+export const routes = [
   {
     path: '/',
     redirect: '/home'
@@ -10,22 +9,42 @@ const routes = [
 
   {
     path: '/home',
+    name: '首页',
     component: Home
   },
 
   {
     path: '/about',
-    component: () => import(/** webpack_async_chunk_about **/ '@/views/About')
+    name: '关于',
+    component: () => import(/* webpackChunkName: "webpack_async_chunk_about" */ '@/views/About')
   },
-
   {
     path: '/piniaa',
-    component: () => import(/** webpack_async_chunk_about **/ '@/views/PiniaA')
+    name: 'Pinia A',
+    component: () => import(/* webpackChunkName: "webpack_async_chunk_pinia_a" */ '@/views/PiniaA')
   },
 
   {
     path: '/piniab',
-    component: () => import(/** webpack_async_chunk_about **/ '@/views/PiniaB')
+    name: 'Pinia B',
+    component: () => import(/* webpackChunkName: "webpack_async_chunk_pinia_b" */ '@/views/PiniaB')
+  },
+  {
+    path: '/ui',
+    name: 'Element UI',
+    component: () => import(/*  webpackChunkName: "webpack_async_chunk_ele_ui" */'@/views/UIS'),
+    children: [
+      {
+        path: 'buttons',
+        name: 'UI BUTTONS',
+        component: () => import(/*  webpackChunkName: "webpack_async_chunk_ele_ui_buttons" */'@/views/UIS/Buttons'),
+      },
+      {
+        path: 'icons',
+        name: 'UI ICONS',
+        component: () => import(/*  webpackChunkName: "webpack_async_chunk_ele_ui_icons" */'@/views/UIS/Icons'),
+      },
+    ]
   }
 ]
 

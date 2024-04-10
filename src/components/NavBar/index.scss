@@ -1,0 +1,13 @@
+.nav_bar{
+  height: 100vh;
+  background-color: #545c64;
+
+  .project_title {
+    padding: 30px 20px;
+    color: #fff;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    user-select: none;
+  }
+}

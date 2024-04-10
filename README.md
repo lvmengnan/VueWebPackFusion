@@ -55,5 +55,40 @@ npx webpack
   1. 都可以使用，在选项式组件中，我们可以将值store进行实例话以后得到的值（一个proxy对象）放到data上或者computed中，然后对store实例下的属性进行访问；也可以通过pinia提供的map辅助函数进行映射；**注意：** 在用pinia的选项式创建store时，对于操作this的函数不要使用箭头函数进行声明；
   2. 无论是pinia组合式创建的store还是选项式创建的store都可以通过map辅助函数进行映射 **结论：** 任何方式创建的pinia的store，都应该可以用相同的方式使用
 
+#### 关于UI升级
+本来打算使用element-ui为此项目的UI库，但是发现现有的库对vue3不支持，所以升级到element-plus
+安装：
+```js
+ npm install element-plus --save
+```
+用到的插件：
+unplugin-vue-components （按需加载）
+unplugin-auto-import （自动导入）
+```js
+npm install -D unplugin-vue-components unplugin-auto-import
+```
+需要添加的webpack配置
+```js
+// webpack.config.js
+const AutoImport = require('unplugin-auto-import/webpack')
+const Components = require('unplugin-vue-components/webpack')
+const { ElementPlusResolver } = require('unplugin-vue-components/resolvers')
 
-+ 
+module.exports = {
+  // ...
+  plugins: [
+    AutoImport({
+      resolvers: [ElementPlusResolver()],
+    }),
+    Components({
+      resolvers: [ElementPlusResolver()],
+    }),
+  ],
+}
+```
+*按需加载及自动导入成功以后，不需要在入口文件对ElementPlus进行初始化，也不需要在组件内手动引入*
+
+#### 路由嵌套
+在做路由嵌套是，子路由path为单纯字段，不带"/"；
+**一个BUG：** 由于一开始项目没有在webpack.output中配置publicPath,导致Html加载js时使用的是相对路径。当加载子路由时，js资源指向错误地址，请求不到资源；
+修改方案： webpack.output.publicPath: '/';

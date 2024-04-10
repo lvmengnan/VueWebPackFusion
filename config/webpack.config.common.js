@@ -1,6 +1,9 @@
 const { dirpath, env, getReg }  = require('./webpack.utils');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const VueLoaderPlugin = require('vue-loader/dist/plugin');
+const AutoImport = require('unplugin-auto-import/webpack')
+const Components = require('unplugin-vue-components/webpack');
+const { ElementPlusResolver } = require('unplugin-vue-components/resolvers');
 
 module.exports = {
   mode: env,
@@ -10,7 +13,10 @@ module.exports = {
   output: {
     path: dirpath('../dist'),
     filename: 'js/[name].[contenthash:8].js',
-    clean: true
+    clean: true,
+    asyncChunks: true, // 默认值就是true
+    chunkFilename: 'js/[name].[contenthash:8].js',
+    publicPath: '/'
   },
 
   plugins: [
@@ -18,7 +24,13 @@ module.exports = {
       template: dirpath('../public/index.html'),
       title: 'webpack_vue3'
     }),
-    new VueLoaderPlugin.default()
+    new VueLoaderPlugin.default(),
+    AutoImport.default({
+      resolvers: [ElementPlusResolver()],
+    }),
+    Components.default({
+      resolvers: [ElementPlusResolver()],
+    }),
   ],
 
   devServer: {

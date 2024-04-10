@@ -13,7 +13,7 @@ module.exports = () => {
     config.plugins.push(...[
       new MiniCssExtractPlugin({
         filename: 'css/[name].[contenthash:8].css',
-        chunkFilename: 'css/chunks:[name].[contenthash:8].css'
+        chunkFilename: 'css/chunks.[name].[contenthash:8].css'
       }), // css进行提取
     ])
 
