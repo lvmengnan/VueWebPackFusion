@@ -1,3 +1,7 @@
+/**
+ * @desc 这是一个vuex创建的store
+ * **/ 
+
 import { createStore } from 'vuex';
 
 const store = {

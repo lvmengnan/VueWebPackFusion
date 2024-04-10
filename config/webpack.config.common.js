@@ -47,5 +47,14 @@ module.exports = {
         use: ['sass-loader']
       }
     ]
+  },
+
+  resolve: {
+    alias: {
+      '@': dirpath('../src'),
+      '$vue': dirpath('../node_modules/vue/dist/vue.esm-bundler.js'),
+    },
+
+    extensions: ['.vue', '.js', '.json', '...']
   }
 }

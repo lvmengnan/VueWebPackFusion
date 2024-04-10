@@ -32,6 +32,7 @@
   "dependencies": {
     "element-ui": "^2.15.14",
     "packlv_utils": "^1.0.3",
+    "pinia": "^2.1.7",
     "vue": "^3.4.21",
     "vue-router": "^4.3.0",
     "vuex": "^4.1.0"

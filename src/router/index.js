@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory, createWebHashHistory } from 'vue-router';
-import Home from '../views/Home/index.vue';
-import About from '../views/About/index.vue';
+import Home from '@/views/Home';
+import About from '@/views/About';
 
 const routes = [
   {
@@ -15,7 +15,17 @@ const routes = [
 
   {
     path: '/about',
-    component: () => import(/** webpack_async_chunk_about **/ '../views/About/index.vue')
+    component: () => import(/** webpack_async_chunk_about **/ '@/views/About')
+  },
+
+  {
+    path: '/piniaa',
+    component: () => import(/** webpack_async_chunk_about **/ '@/views/PiniaA')
+  },
+
+  {
+    path: '/piniab',
+    component: () => import(/** webpack_async_chunk_about **/ '@/views/PiniaB')
   }
 ]
 

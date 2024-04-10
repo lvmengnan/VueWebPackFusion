@@ -6,5 +6,11 @@
     <li class="nav_item">
       <router-link to="/about">About</router-link>
     </li>
+    <li class="nav_item">
+      <router-link to="/piniaa">PiniaA</router-link>
+    </li>
+    <li class="nav_item">
+      <router-link to="/piniab">PiniaB</router-link>
+    </li>
   </ul>
 </template>
