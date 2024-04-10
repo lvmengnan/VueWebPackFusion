@@ -90,5 +90,7 @@ module.exports = {
 
 #### 路由嵌套
 在做路由嵌套是，子路由path为单纯字段，不带"/"；
+
 **一个BUG：** 由于一开始项目没有在webpack.output中配置publicPath,导致Html加载js时使用的是相对路径。当加载子路由时，js资源指向错误地址，请求不到资源；
-修改方案： webpack.output.publicPath: '/';
+
+**修改方案：**  webpack.output.publicPath: '/';
