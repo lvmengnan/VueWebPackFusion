@@ -16,13 +16,12 @@ module.exports = {
     clean: true,
     asyncChunks: true, // 默认值就是true
     chunkFilename: 'js/[name].[contenthash:8].js',
-    publicPath: '/'
   },
 
   plugins: [
     new HtmlWebpackPlugin({
       template: dirpath('../public/index.html'),
-      title: 'webpack_vue3'
+      title: 'VueWebpackFusion'
     }),
     new VueLoaderPlugin.default(),
     AutoImport.default({

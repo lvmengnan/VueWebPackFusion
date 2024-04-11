@@ -25,7 +25,7 @@ export default {
   },
 
   computed: {
-    ...mapStores([useCounterStore, useBoolStore])
+    ...mapStores(useCounterStore, useBoolStore)
   },
 
   methods: {

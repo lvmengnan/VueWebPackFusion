@@ -12,4 +12,7 @@ import {
   Minus,
   Odometer,
 } from '@element-plus/icons-vue';
+import $ from 'jquery';
+
+console.log('jquery', $);
 </script>

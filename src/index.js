@@ -5,6 +5,7 @@ import App from '@/App';
 import Store from '@/sotre';
 import Router from '@/router';
 import '@/assest/css/init_style.css';
+import '@/assest/css/hover.css';
 
 
 const app = createApp(App);

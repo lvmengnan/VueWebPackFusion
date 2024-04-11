@@ -49,6 +49,21 @@ npx webpack
 
 + 添加了扩展名（extensions）配置，让webpack自动辨别文件类型
 
+
+#### webpack.externals
+externals 配置选项提供了「从输出的 bundle 中排除依赖」的方法
+
+>在项目中，我们引入了jquery包，并且配置了webpack.externals。可以减小最终打包的体积
+```js
+// webpack.config.js
+config.externals = {
+  jQuery: 'jQuery',
+};
+
+// index.html
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+```
+
 #### 初学pinia的探索
 + pinia也分为选项式和组合式，那么选项式生成的store能在组合式的组件中使用吗？反之呢？
   >实验结果：
@@ -94,3 +109,7 @@ module.exports = {
 **一个BUG：** 由于一开始项目没有在webpack.output中配置publicPath,导致Html加载js时使用的是相对路径。当加载子路由时，js资源指向错误地址，请求不到资源；
 
 **修改方案：**  webpack.output.publicPath: '/';
+
+#### hover.css
+引入hover.css文件，提供了炫酷的hover效果
+[hover.css官网](https://ianlunn.github.io/Hover/)

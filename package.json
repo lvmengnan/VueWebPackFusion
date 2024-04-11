@@ -33,6 +33,7 @@
   },
   "dependencies": {
     "element-plus": "^2.6.3",
+    "jquery": "^3.7.1",
     "packlv_utils": "^1.0.3",
     "pinia": "^2.1.7",
     "vue": "^3.4.21",
