@@ -45,7 +45,12 @@ export const routes = [
         component: () => import(/*  webpackChunkName: "webpack_async_chunk_ele_ui_icons" */'@/views/UIS/Icons'),
       },
     ]
-  }
+  },
+  {
+    path: '/slots',
+    name: 'Slots Page',
+    component: () => import(/* webpackChunkName: "webpack_async_chunk_slots" */ '@/views/Slots')
+  },
 ]
 
 export default createRouter({
