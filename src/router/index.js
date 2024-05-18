@@ -51,6 +51,11 @@ export const routes = [
     name: 'Slots Page',
     component: () => import(/* webpackChunkName: "webpack_async_chunk_slots" */ '@/views/Slots')
   },
+  {
+    path: '/filesview',
+    name: 'Files View',
+    component: () => import(/* webpackChunkName: "webpack_async_chunk_files_view" */ '@/views/FilesView')
+  },
 ]
 
 export default createRouter({

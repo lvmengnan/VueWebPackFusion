@@ -43,7 +43,7 @@ module.exports = {
     rules: [
       {
         test: getReg('vue'),
-        loader: 'vue-loader'
+        use: ['vue-loader']
       },
       {
         test: getReg('js'),

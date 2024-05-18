@@ -1,0 +1,30 @@
+.root_node {
+  .children_list {
+    display: none;
+    margin: 10px 0 10px 25px;
+  }
+
+  .show {
+    display: block;
+  }
+
+  .root_node_name:hover {
+    background-color: rgb(207, 207, 207, 0.4);
+  }
+
+  .folder_node_name:hover {
+    background-color: rgb(237, 217, 192, 0.4);
+  }
+
+  .file_node_name:hover {
+    background-color: rgb(169, 250, 223, 0.4);
+  }
+
+  // .folder_node_name, .file_node_name {
+  //   margin-left: 25px;
+  // }
+
+
+
+  cursor: pointer;
+}

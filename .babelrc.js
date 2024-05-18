@@ -7,6 +7,7 @@ module.exports = {
         "libraryName": "element-ui",
         "styleLibraryName": "theme-chalk"
       }
-    ]
+    ],
+    "@vue/babel-plugin-jsx"
   ]
 }
